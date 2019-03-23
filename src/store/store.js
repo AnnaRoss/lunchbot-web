@@ -2,7 +2,7 @@ import React from 'react';
 import { GET_RESTAURANTS_SUCCESS, GET_RESTAURANT_SUCCESS } from '../constants';
 
 /**
- * A React Context object which will hold global data.
+ * A React Context object which will contain the app's data.
  * Read more? https://reactjs.org/docs/context.html
  */
 export const Store = React.createContext('');
@@ -38,3 +38,6 @@ export const StoreProvider = ({ children }) => {
 
   return <Store.Provider value={value}>{children}</Store.Provider>;
 };
+
+/* Selectors for reading data from the store */
+export const getRestaurantById = (state, id) => state.byId[id];
