@@ -1,5 +1,10 @@
 import React from 'react';
-import { GET_RESTAURANTS_SUCCESS, GET_RESTAURANT_SUCCESS } from '../constants';
+import {
+  GET_RESTAURANTS_SUCCESS,
+  GET_RESTAURANT_SUCCESS,
+  GET_RESTAURANTS_FAILURE,
+  GET_RESTAURANT_FAILURE,
+} from '../constants';
 
 /**
  * A React Context object which will contain the app's data.
@@ -8,7 +13,8 @@ import { GET_RESTAURANTS_SUCCESS, GET_RESTAURANT_SUCCESS } from '../constants';
 export const Store = React.createContext('');
 
 const initialState = {
-  restaurants: [],
+  error: null,
+  restaurants: null,
   byId: {},
 };
 
@@ -17,15 +23,23 @@ const restaurantReducer = (state, action) => {
     case GET_RESTAURANTS_SUCCESS:
       return {
         ...state,
+        error: null,
         restaurants: action.payload,
       };
     case GET_RESTAURANT_SUCCESS:
       return {
         ...state,
+        error: null,
         byId: {
           ...state.byId,
           [action.payload.id]: action.payload,
         },
+      };
+    case GET_RESTAURANT_FAILURE:
+    case GET_RESTAURANTS_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;
@@ -40,4 +54,12 @@ export const StoreProvider = ({ children }) => {
 };
 
 /* Selectors for reading data from the store */
-export const getRestaurantById = (state, id) => state.byId[id];
+export const getRestaurantById = (state, id) => ({
+  data: state.byId[id],
+  error: state.error,
+});
+
+export const getRestaurants = (state) => ({
+  data: state.restaurants,
+  error: state.error,
+});

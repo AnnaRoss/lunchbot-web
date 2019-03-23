@@ -1,4 +1,9 @@
-import { GET_RESTAURANTS_SUCCESS, GET_RESTAURANT_SUCCESS } from '../constants';
+import {
+  GET_RESTAURANTS_SUCCESS,
+  GET_RESTAURANT_SUCCESS,
+  GET_RESTAURANT_FAILURE,
+  GET_RESTAURANTS_FAILURE,
+} from '../constants';
 
 export const retrieveAllRestaurants = (dispatch) => {
   return fetch('/api/list')
@@ -9,7 +14,12 @@ export const retrieveAllRestaurants = (dispatch) => {
         payload: restaurants,
       })
     )
-    .catch((error) => console.error(error));
+    .catch((error) =>
+      dispatch({
+        type: GET_RESTAURANTS_FAILURE,
+        payload: error.message,
+      })
+    );
 };
 
 export const retrieveRestaurantById = (dispatch, id) => {
@@ -21,5 +31,10 @@ export const retrieveRestaurantById = (dispatch, id) => {
         payload: restaurant,
       })
     )
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      dispatch({
+        type: GET_RESTAURANT_FAILURE,
+        payload: error.message,
+      });
+    });
 };
