@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { Store, getRestaurants } from '../../store/store';
 import { retrieveAllRestaurants } from '../../utils/api';
 
@@ -23,9 +23,9 @@ const Restaurants = () => {
 
   return (
     <ul>
-      {data.map(({ id, name }) => (
-        <li key={id}>
-          <Link to={`/restaurant/${id}`}>{name}</Link>
+      {data.map((restaurant) => (
+        <li key={restaurant.id}>
+          <RestaurantCard data={restaurant} />
         </li>
       ))}
     </ul>
