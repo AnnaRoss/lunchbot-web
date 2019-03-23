@@ -1,5 +1,5 @@
 import React from 'react';
-import { GET_RESTAURANTS_SUCCESS } from '../constants';
+import { GET_RESTAURANTS_SUCCESS, GET_RESTAURANT_SUCCESS } from '../constants';
 
 /**
  * A React Context object which will hold global data.
@@ -9,6 +9,7 @@ export const Store = React.createContext('');
 
 const initialState = {
   restaurants: [],
+  byId: {},
 };
 
 const restaurantReducer = (state, action) => {
@@ -17,6 +18,14 @@ const restaurantReducer = (state, action) => {
       return {
         ...state,
         restaurants: action.payload,
+      };
+    case GET_RESTAURANT_SUCCESS:
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [action.payload.id]: action.payload,
+        },
       };
     default:
       return state;
