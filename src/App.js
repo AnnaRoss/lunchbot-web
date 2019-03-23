@@ -1,15 +1,15 @@
 import React from 'react';
-import { Store } from './store/store';
-import { retrieveAllRestaurants } from './utils/api';
+import { Router } from '@reach/router';
+import Restaurants from './views/Restaurants/Restaurants';
+import Restaurant from './views/Restaurant/Restaurant';
 
 const App = () => {
-  const { state, dispatch } = React.useContext(Store);
-
-  React.useEffect(() => {
-    retrieveAllRestaurants(dispatch);
-  }, []);
-
-  return <h1>LunchBot</h1>;
+  return (
+    <Router>
+      <Restaurants exact path="/" />
+      <Restaurant path="/restaurant/:id" />
+    </Router>
+  );
 };
 
 export default App;
