@@ -11,9 +11,9 @@ First of all, make sure your local environment have the following installed:
 
 All set? Let's proceed! :ok_hand: :smile:
 
-### 1. **Create a `.env`-file**
+### 1. **Create a `.env.local`-file**
 
-Copy the content of `.env-example`-file located at the root directory.
+Copy the content of `.env.local.example`-file located at the root directory.
 
 ### 2. **Install dependencies**
 
