@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 8px 12px;
+  background: var(--silent-color);
+  border-radius: var(--border-radius);
+}
+
+.number {
+  padding: 0 4px 0 0;
+}
+
+.star {
+  display: inline-block;
+  width: 16px;
+  color: hsl(51, 98%, 52%);
+}
