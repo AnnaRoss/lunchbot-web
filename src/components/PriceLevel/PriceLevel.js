@@ -3,22 +3,18 @@ import { ReactComponent as DollarSign } from '../../assets/icons/dollar-sign-sol
 import styles from './PriceLevel.module.scss';
 
 const PriceLevel = ({ level }) => {
-  let icons = [null, null, null, null];
-
-  icons.fill(
-    <div className={styles.dollarSign}>
-      <DollarSign />
-    </div>,
-    0,
-    level
-  );
+  let emptySlotsForIcons = new Array(level).fill(null);
 
   return (
     <div
       className={styles.wrapper}
       aria-label={`Estimated price level: ${level}`}
     >
-      {icons}
+      {emptySlotsForIcons.map((_, i) => (
+        <div key={i} className={styles.dollarSign}>
+          <DollarSign />
+        </div>
+      ))}
     </div>
   );
 };
