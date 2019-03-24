@@ -2,6 +2,7 @@ import React from 'react';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { Store, getRestaurants } from '../../store/store';
 import { retrieveAllRestaurants } from '../../utils/api';
+import styles from './Restaurants.module.scss';
 
 const Restaurants = () => {
   const { state, dispatch } = React.useContext(Store);
@@ -22,9 +23,9 @@ const Restaurants = () => {
   }
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {data.map((restaurant) => (
-        <li key={restaurant.id}>
+        <li className={styles.listItem} key={restaurant.id}>
           <RestaurantCard data={restaurant} />
         </li>
       ))}

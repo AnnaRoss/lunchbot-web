@@ -10,4 +10,8 @@
 .dollarSign {
   color: hsl(97.7, 38.7%, 56%);
   width: 8px;
+
+  + div {
+    margin-left: 2px;
+  }
 }
