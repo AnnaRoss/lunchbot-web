@@ -1,0 +1,13 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: var(--silent-color);
+  border-radius: var(--border-radius);
+}
+
+.dollarSign {
+  color: hsl(97.7, 38.7%, 56%);
+  width: 8px;
+}
