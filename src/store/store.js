@@ -4,6 +4,9 @@ import {
   GET_RESTAURANT_SUCCESS,
   GET_RESTAURANTS_FAILURE,
   GET_RESTAURANT_FAILURE,
+  SET_SORT_TYPE,
+  SET_SORT_ORDER,
+  SORT_TYPES,
 } from '../constants';
 
 /**
@@ -16,6 +19,8 @@ const initialState = {
   error: null,
   restaurants: null,
   byId: {},
+  sortType: SORT_TYPES.RATING,
+  sortDescending: true,
 };
 
 const restaurantReducer = (state, action) => {
@@ -41,6 +46,16 @@ const restaurantReducer = (state, action) => {
         ...state,
         error: action.payload,
       };
+    case SET_SORT_TYPE:
+      return {
+        ...state,
+        sortType: action.payload,
+      };
+    case SET_SORT_ORDER:
+      return {
+        ...state,
+        sortDescending: !state.sortDescending,
+      };
     default:
       return state;
   }
@@ -62,4 +77,12 @@ export const getRestaurantById = (state, id) => ({
 export const getRestaurants = (state) => ({
   data: state.restaurants,
   error: state.error,
+});
+
+export const getCurrentSortBy = (state) => ({
+  data: state.sortType,
+});
+
+export const getCurrentSortOrder = (state) => ({
+  data: state.sortDescending,
 });
