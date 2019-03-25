@@ -19,3 +19,10 @@
 .hours {
   font-family: "Montserrat Light", sans-serif;
 }
+
+.clock {
+  display: block;
+  width: 16px;
+  margin: 4px 16px 0 0;
+  color: var(--subtle-text-color);
+}

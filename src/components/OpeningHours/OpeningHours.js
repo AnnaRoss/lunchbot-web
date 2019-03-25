@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './OpeningHours.module.scss';
+import { ReactComponent as Clock } from '../../assets/icons/clock-solid.svg';
 
 const OpeningHours = ({ data }) => {
   return (
     <div className={styles.listWrapper}>
-      <p>Opening Hours</p>
+      <span className={styles.clock} aria-label="Opening hours">
+        <Clock />
+      </span>
       <ul className={styles.list}>
         {data.map((dayString) => {
           const end = dayString.indexOf(':');
