@@ -1,0 +1,30 @@
+.default {
+  all: unset;
+  padding: 8px;
+  margin: 4px 0 4px 12px;
+  border: 0;
+  border-radius: var(--border-radius);
+  background-color: var(--silent-color);
+  font: inherit;
+  font-variant-caps: all-petite-caps;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.active {
+  margin-left: 6px;
+  color: var(--contrast-color);
+  background-color: transparent;
+}
+
+.inactive {
+  margin-left: 6px;
+  background-color: transparent;
+}
+
+.icon {
+  + svg {
+    width: 20px;
+  }
+}
