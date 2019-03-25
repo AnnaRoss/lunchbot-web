@@ -18,3 +18,15 @@ export const InfoLabelText = ({ children, ...props }) => (
     {children}
   </p>
 );
+
+export const ExternalTextLink = ({ url, children, ...props }) => (
+  <a
+    className={styles.externalLink}
+    href={`${url}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    {...props}
+  >
+    {children}
+  </a>
+);
