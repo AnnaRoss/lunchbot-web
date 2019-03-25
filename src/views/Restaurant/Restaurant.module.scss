@@ -1,0 +1,10 @@
+.gridContainer {
+  margin: 0;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 12px 8px;
+}
+
+.tags {
+  display: flex;
+}
