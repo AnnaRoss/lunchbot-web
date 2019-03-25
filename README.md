@@ -67,16 +67,17 @@ Launches the test runner in the interactive watch mode.<br>
 
 Builds the app for production to the `build` folder.<br>
 
-## Anna's Comments
+## Anna's General Thoughts
 
 ### Improvements & Bugs
 
 Given I would have more time, I would like to:
-- implement tests (I've quite recently started out with testing, therefore I didn't prioritize it)
-- write comments in the code base, to enhance readability for other developers.
-- extend the very lightweight error handling that I had time to implement.
-- implement feedback to the user ( loaders, error message etc.)
-- give the design more love, responsiveness is high priority; 
+- Implement tests (I've quite recently started out with testing, therefore I didn't prioritize it)
+- Write comments in the code base, to enhance readability for other developers.
+- Extend the very lightweight error handling that I had time to implement.
+- Implement feedback to the user ( loaders, error message etc.)
+- Give the design more love, responsiveness is high priority.
+- Implement a "go-back-button".
 - Fix a bug that I know of, is that when you hit the phone-number-link in the detailed-restaurant-view. It makes a call to the API.
 
 ### Features
@@ -99,8 +100,8 @@ attributes.**<br>
 > As a LunchBot visitor, I want to be able to easily view the restaurants with the best rating,
 > so that it takes less time for me to find a place where I know has good food.
 
-A feature that I've started with, but didn't have time to complete, was to inform the user wether or not a restaurant is open at the current time. Since that feels like an essential feature for the app. 
+#### Not Implemented
 
-### General thoughts
+A feature that I've started with, but didn't have time to complete, was to inform the user wether or not a restaurant is open at the current time. Since that feels like an essential feature for the app. 
 
 What I'm thinking about implementing, but didn't have time to do for this code task, are features such as sorting by distance from the user's current location, using the Geolocation API.
