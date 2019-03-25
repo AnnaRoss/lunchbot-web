@@ -20,6 +20,7 @@
   --silent-color: hsla(0, 3%, 12%, 0.1);
   --text-color: hsl(0, 2%, 12%);
   --subtle-text-color: hsl(240, 2%, 45%);
+  --contrast-color: hsl(330, 100%, 71%);
   --white: hsla(0, 90%, 100%, 1);
 }
 
