@@ -5,6 +5,24 @@
   grid-gap: 12px 8px;
 }
 
-.tags {
+.tags,
+.details {
   display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.iconWrapper {
+  display: inline-block;
+  width: 14px;
+  margin: 0 16px 0 0;
+  color: var(--subtle-text-color);
+}
+
+.address {
+  display: inline-flex;
+  font-size: 12px;
+  max-width: 240px;
 }

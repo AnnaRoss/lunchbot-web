@@ -7,6 +7,9 @@ import PriceLevel from '../../components/PriceLevel/PriceLevel';
 import Rating from '../../components/Rating/Rating';
 import OpeningHours from '../../components/OpeningHours/OpeningHours';
 import { H2, ExternalTextLink } from '../../components/Typography/Typography';
+import { ReactComponent as ExternalLinkIcon } from '../../assets/icons/external-link-alt-solid.svg';
+import { ReactComponent as PhoneIcon } from '../../assets/icons/phone-solid.svg';
+import { ReactComponent as MapMarkerIcon } from '../../assets/icons/map-marker-alt-solid.svg';
 
 const Restaurant = ({ id }) => {
   const { state, dispatch } = React.useContext(Store);
@@ -37,24 +40,34 @@ const Restaurant = ({ id }) => {
       </div>
 
       <div className={styles.details}>
+        <span className={styles.iconWrapper}>
+          <ExternalLinkIcon />
+        </span>
         <ExternalTextLink url={data.website}>{data.website}</ExternalTextLink>
       </div>
 
       <div className={styles.details}>
-        <ExternalTextLink url={data.google_maps_url}>
-          View location in Google Maps
-        </ExternalTextLink>
+        <span className={styles.iconWrapper}>
+          <MapMarkerIcon />
+        </span>
+
+        <div className={`${styles.details} ${styles.flexColumn}`}>
+          <ExternalTextLink url={data.google_maps_url}>
+            View location in Google Maps
+          </ExternalTextLink>
+          <p className={styles.address}>{data.address}</p>
+        </div>
       </div>
 
-      <div className={styles.details}>
+      <div className={`${styles.details} ${styles.flexColumn}`}>
         <OpeningHours data={data.opening_hours} />
       </div>
 
       <div className={styles.details}>
-        <address>
-          <p>{data.address}</p>
-          <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
-        </address>
+        <span className={styles.iconWrapper}>
+          <PhoneIcon />
+        </span>
+        <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
       </div>
     </section>
   );
