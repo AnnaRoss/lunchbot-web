@@ -71,6 +71,7 @@ const Restaurants = () => {
         {Object.values(SORT_TYPES).map((type) => {
           return (
             <Button
+              key={`sort-by-${type}`}
               onClick={() => setSortType(type)}
               name={type}
               styling={type === activeSorting ? 'active' : 'inactive'}
