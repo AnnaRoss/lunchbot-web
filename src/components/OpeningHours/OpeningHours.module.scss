@@ -1,0 +1,21 @@
+.listWrapper {
+  max-width: 300px;
+  display: flex;
+}
+
+.list {
+  flex: 0 1 240px;
+}
+
+.listItemWrapper {
+  padding: 4px 0;
+}
+
+.day,
+.hours {
+  font-size: 12px;
+}
+
+.hours {
+  font-family: "Montserrat Light", sans-serif;
+}
